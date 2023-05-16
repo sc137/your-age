@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>What is Your Age?</title>
+    <!-- 
+            Sable Cantus
+            What is Your Age?
+            Taken from How to Entertain With Your Pocket Calculator
+            by Oleg Jefimenko
+        -->
+</head>
+
+<body class="w3-container">
+    <header class="w3-blue-gray w3-center">
+        <h1>What is Your Age?</h1>
+    </header>
+    <main>
+        <div id="step1">
+            <p>You will <b>secretly</b> enter your information and press Go!.</p>
+
+            <form class="w3-container" name="guess">
+                <label for="age">Enter your age:</label>
+                <div id="ageError" class="w3-panel alert"></div>
+                <input id="age" name="age" type="number" maxlength="3" class="w3-input w3-border" min="10" required>
+                <br>
+                <label for="fav">Enter your favorite <br>one-digit number:</label>
+                <div id="favError" class="w3-panel alert"></div>
+                <input id="fav" name="fav" type="number" maxlength="1" class="w3-input w3-border" min="1" max="9"
+                    required>
+                <br>
+                <input class="w3-button w3-blue-gray" type="button" value="Go!" onclick="guessAge()">
+            </form>
+        </div>
+
+        <div id="step2" class="w3-container w3-card w3-center">
+            <h2><i>Show this to the Mathmagician</i></h2>
+            <div id="result" class="big w3-pale-yellow"></div>
+            <br>
+            <button class="w3-button w3-blue-gray" onclick="window.location.reload();">Start Over</button>
+        </div>
+
+        <div id="help" class="w3-container w3-card">
+            <h2 class="w3-container w3-pale-yellow w3-center">What's Going on Here?</h2>
+            <hr>
+            <p>The Mathmagician will calculate your age<br>
+                based on the magic formula.</p>
+            <p>The Magic Formula is:<br>
+                <code>(Your Age - Favorite Number) * 9 + Your Age</code>
+            </p>
+            <blockquote class="w3-container w3-right w3-small">
+                <p>From How to Entertain With Your Pocket Calculator<br><span class="w3-right"><i>by Oleg
+                            Jefimenko</i></span>
+                </p>
+            </blockquote>
+        </div>
+        <footer class="w3-container">
+            <img src="help.png" alt="help icon" width="35px" class="help_icon" onclick="help_icon()">
+        </footer>
+    </main>
+
+
+
+
+</body>
+
+</html>
