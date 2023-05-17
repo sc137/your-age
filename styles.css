@@ -5,7 +5,7 @@ body {
 
 main {
     margin: 0 auto;
-    width: 400px;
+    max-width: 400px;
     background-color: #fefefe;
     color: #0e0e0e;
     font-size: 24px;
@@ -19,11 +19,15 @@ button {
 #help {
     background-color: rgb(231, 231, 231);
     position: absolute;
+    margin: auto;
     top: 5%;
-    left: 15%;
-    width: 75%;
-    /* height: 75%; */
+    /* left: 10%; */
+    width: 90%;
+    max-width: 400px;
     padding: 25px;
+    /* Adding the z-index so that the help
+        screen appears OVER the help icon */
+    z-index: 1;
 }
 
 .alert {

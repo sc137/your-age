@@ -1,7 +1,9 @@
+// setup constants for the elements
 const step1 = document.getElementById('step1');
 const step2 = document.getElementById('step2');
 const help = document.getElementById('help');
 const result = document.getElementById('result');
+const icon = document.getElementById('help_icon');
 
 // show step 1
 step1.style.visibility = 'visible';
@@ -38,7 +40,6 @@ function guessAge() {
     error_fav.style.display = 'none';
 
     // validate the age and favorite number
-
     if (age.value == '') {
         ageError();
         return;
@@ -98,6 +99,27 @@ function help_icon() {
     }
 }
 
+// Since the help screen is over over the help icon
+// it is blocking the icon on small screens.
+// We are going to add an event handler to capture clicks
+// and close the help screen when you click anywhere
+function closeHelp() {
+    help.style.display = 'none';
+}
+
 // event handlers
 document.onkeydown = showHideHelp;
 document.body.onload = clearAll();
+
+// this event handler listens for clicks outside of the help
+// modal and closes it 
+document.addEventListener(
+    'click', 
+    function(event) {
+        if (!event.target.matches('.help_icon') &&
+            !event.target.closest('.help')) {
+            closeHelp();
+        }
+    },
+    false
+)
