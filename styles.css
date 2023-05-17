@@ -51,3 +51,13 @@ button {
 .help_icon, img {
     opacity: 0.6;
 }
+
+/* Hide the help icon in tiny screens */
+@media screen and (max-width: 320px) {
+    main {
+        font-size: 18px;
+    }
+    .help_icon {
+        display: none;
+    }
+}
