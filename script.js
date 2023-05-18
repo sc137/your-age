@@ -4,6 +4,7 @@ const step2 = document.getElementById('step2');
 const help = document.getElementById('help');
 const result = document.getElementById('result');
 const icon = document.getElementById('help_icon');
+const goButton = document.getElementById('goButton');
 
 // show step 1
 step1.style.visibility = 'visible';
@@ -28,7 +29,6 @@ function favError() {
     error_fav.style.display = 'block';
     error_fav.innerHTML = 'Please enter a number between 1 and 9';
 }
-
 
 function guessAge() {
     // get the age and favorite number
@@ -123,3 +123,21 @@ document.addEventListener(
     },
     false
 )
+
+// add an event listener to the age input
+// this will submit the form when return is pressed
+age.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        goButton.click();
+    }
+});
+
+// add an event listener to the fav input
+// this will submit the form when return is pressed
+fav.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        goButton.click();
+    }
+});
